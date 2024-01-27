@@ -54,3 +54,27 @@ int toggle_led(enum led_num led) {
             return -EINVAL;
     }
 }
+
+int toggle_led_color(enum led_color color) {
+    switch (color) {
+        case LED_COLOR_RED:
+            // Toggle red LED
+            return gpio_pin_toggle_dt(&led0);
+        case LED_COLOR_GREEN:
+            // Toggle green LED
+            return gpio_pin_toggle_dt(&led1);
+        case LED_COLOR_BLUE:
+            // Toggle blue LED
+            return gpio_pin_toggle_dt(&led2);
+        case LED_COLOR_YELLOW:
+            // Toggle yellow LED (combination of red and green)
+            gpio_pin_toggle_dt(&led0);
+            return gpio_pin_toggle_dt(&led1);
+        case LED_COLOR_WHITE:
+            gpio_pin_toggle_dt(&led0);
+            gpio_pin_toggle_dt(&led1);
+            return gpio_pin_toggle_dt(&led2);
+        default:
+            return -EINVAL;
+    }
+}
