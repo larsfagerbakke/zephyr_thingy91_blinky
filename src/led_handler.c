@@ -89,3 +89,14 @@ int toggle_led_color(enum led_color color)
         return -EINVAL;
     }
 }
+
+int blink_led_color(enum led_color color, int num_times, int sleep_time_ms) {
+    for (int i = 0; i < num_times; i++) {
+        int ret = toggle_led_color(color);
+        if (ret < 0) {
+            return ret;
+        }
+        k_msleep(sleep_time_ms);
+    }
+    return 0;
+}
