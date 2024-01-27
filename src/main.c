@@ -14,7 +14,7 @@ int main(void)
         int ret;
 
         ret = init_leds();
-        if( ret < 0)
+        if (ret < 0)
         {
                 LOG_ERR("LED setup failed, error %d", ret);
                 return 0;
