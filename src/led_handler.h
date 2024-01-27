@@ -5,14 +5,16 @@
 #include <zephyr/drivers/gpio.h>
 
 // Define LED enumeration
-enum led_num {
-    LED_0,  // Red
-    LED_1,  // Green
-    LED_2   // Blue
+enum led_num
+{
+    LED_0, // Red
+    LED_1, // Green
+    LED_2  // Blue
 };
 
 // Define Color enumeration
-enum led_color {
+enum led_color
+{
     LED_COLOR_RED,
     LED_COLOR_GREEN,
     LED_COLOR_BLUE,
