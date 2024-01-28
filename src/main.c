@@ -22,16 +22,31 @@ int main(void)
 
     while (1)
     {
-        LOG_INF("Toggling LED");
+        LOG_INF("Blinking LED");
 
-        ret = toggle_led(LED_2);
+        ret = blink_led_color(LED_COLOR_BLUE, 6, 100); // BLink on a even number to end off!
 
         if (ret < 0)
         {
+            LOG_ERR("LED blinking failed, error %d", ret);
             return 0;
         }
 
         k_msleep(1000);
+
+        LOG_INF("Toggling LED");
+
+        ret = toggle_led_color(LED_COLOR_WHITE);
+        k_msleep(1000);
+        ret = toggle_led_color(LED_COLOR_WHITE);
+
+        if (ret < 0)
+        {
+            LOG_ERR("LED toggle failed, error %d", ret);
+            return 0;
+        }
+
+        k_msleep(3000);
     }
 
     return 0;

@@ -32,6 +32,7 @@ int toggle_led(enum led_num);
 int toggle_led_color(enum led_color color);
 
 // Blink LED with color
+// num_times must be an even number to end off!
 int blink_led_color(enum led_color color, int num_times, int sleep_time_ms);
 
 #endif /* LED_HANDLER_H_ */
