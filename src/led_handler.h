@@ -1,3 +1,10 @@
+/*
+  * led_handler.h
+  *
+  * Created: 28/01/2021, by Lars Fagerbakke for the Nordic Semiconductor Thingy91
+  * 
+  * No needed flags in prj.conf
+*/
 #ifndef LED_HANDLER_H_
 #define LED_HANDLER_H_
 
